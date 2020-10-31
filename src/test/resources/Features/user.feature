@@ -1,5 +1,6 @@
 Feature: User Verification
   Background:
+    #you need to write valid credentials and password
     Given I logged Visma Solutions API using "credentials" and "password"
 
     #Authentication step
@@ -27,11 +28,9 @@ Feature: User Verification
     And delete the last one "projects"
     Then status code should be 400
 
-
   Scenario: Create Project
     Then I created a new project "TestCase_GALATASARAY"
     And status code should be 201
-
 
    @done
   Scenario: Adding customer and deleting it
@@ -47,7 +46,7 @@ Feature: User Verification
     When I delete the "phases"
     Then status code should be 204
 
-#needed update
+#need some update
   Scenario: Create Phase
     When I called for "projects" by "ProjectSemih"
     And I get the guid
